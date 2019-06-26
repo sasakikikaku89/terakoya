@@ -10,10 +10,14 @@
 
 number = 1
 while number <= 100    
-    if number.even?
-        puts "#{number}は偶数です"
+    if number % 3 == 0
+        puts "Yeaaaaa!!"
     else
-        puts "#{number}は奇数です"
+        if number.even?
+            puts "#{number}は偶数です"
+        else
+            puts "#{number}は奇数です"
+        end        
     end
-    number = number + 1
+    number += 1
 end 
