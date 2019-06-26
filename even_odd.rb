@@ -5,15 +5,15 @@
 
 ターミナル上で実行、結果を表示するものとします。
  ※「奇数・偶数の判定」だけはテキストに載っていないと思うので、どういう判定方法があるか調べる or 考えるしてみましょう
- ほかはchapter3までの知識でいけるはずです。
+ ほかはchnumberpter3までの知識でいけるはずです。
 =end
 
-a = 0
-while a <= 99 
-    a = a + 1
-    if a.even?
-        puts "#{a}は偶数です"
+number = 1
+while number <= 100    
+    if number.even?
+        puts "#{number}は偶数です"
     else
-        puts "#{a}は奇数です"
+        puts "#{number}は奇数です"
     end
+    number = number + 1
 end 
