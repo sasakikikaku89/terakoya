@@ -7,6 +7,6 @@ nums.each do |num|
     elsif num % 5 == 0
         puts "Buzz"
     else
-        puts num
+        puts num.to_s
     end
 end
