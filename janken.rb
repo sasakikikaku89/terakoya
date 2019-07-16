@@ -1,23 +1,9 @@
-def janken
-    hash = {1 => "グー", 2=> "チョキ", 3 => "パー"}
-    @mine = gets.chomp.to_i
-    @yours = [1,2,3].sample
-    "あなたは#{hash[@yours]}、私は#{hash[@mine]}"
-end
-
-def hantei
-    if @mine == 1 && @yours == 2
-        puts "YOU WIIIIIIIN"
-    elsif @mine == 2 && @yours == 3
-        puts "YOU WIIIIIIIN"
-    elsif @mine == 3 && @yours == 1
-        puts "YOU WIIIIIIIN"
-    elsif @mine == @yours
-        puts "アイコで しょ！" 
-        puts janken
-        hantei
-    else
+def hantei(mine,yours)
+    if (mine == 1 && yours == 2)||(mine == 2 && yours == 3)||(mine == 3 && yours == 1)
         puts "YOU LOOOOOOOSE"
+    elsif mine == yours
+    else
+        puts "YOU WIIIIIIIIN"
     end 
 end
 
@@ -25,10 +11,16 @@ end
 puts "最初はぐー。じゃんけん"
 puts "数字を選べ >>>>"
 
-hash = {1 => "グー", 2=> "チョキ", 3 => "パー"}
-hash.each do |key,value|
-    puts "#{value}: #{key}"
+array = ["グー", "チョキ", "パー"]
+array.each_with_index do |each_array,i|
+    puts "#{each_array}: #{i+1}"
 end
 
-puts janken
-hantei
+ loop do
+    mine = gets.chomp.to_i
+    yours = [1,2,3].sample
+    puts "あなたは#{array[yours-1]}、私は#{array[mine-1]}"
+    hantei(mine,yours)
+    break if mine != yours
+    puts "アイコで　しょ！！"
+end
