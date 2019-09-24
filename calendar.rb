@@ -20,7 +20,7 @@ first_wday.times {print "　　"}
     print "#{x.to_s.rjust(2)}　"
     first_wday += 1
     if first_wday % 7 == 0
-        puts ""
+        puts
     end
 end
-puts ""
+puts
